@@ -25,4 +25,4 @@ This project is licensed under the MIT License.
 
 ## Author
 
-@blastoshi_
+Thanks for @blastoshi_
