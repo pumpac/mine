@@ -2,14 +2,14 @@ const config = require('./config.js');
 const ethers = require('ethers');
 const provider = new ethers.JsonRpcProvider(config.RPC);
 const miner = new ethers.Wallet(config.PRIVATE_KEY, provider);
-const HYPERSOUND_ADDRESS = '0x284c8e910098B737bfEada09A5fC27dfA8020FC0';
-const HYEPRSOUND_ABI = require('./abi.json')
-const hypersound = new ethers.Contract(HYPERSOUND_ADDRESS, HYEPRSOUND_ABI, miner);
+const PUMPAC_ADDRESS = '0x284c8e910098B737bfEada09A5fC27dfA8020FC0';
+const PUMPAC_ABI = require('./abi.json')
+const pumpac = new ethers.Contract(PUMPAC_ADDRESS, PUMPAC_ABI, miner);
 
 
 async function mine (_nonce) {
     try {
-        const tx = await hypersound.connect(miner).mine('0x', { nonce: _nonce, gasLimit: 19930000 })
+        const tx = await pumpac.connect(miner).mine('0x', { nonce: _nonce, gasLimit: 19930000 })
         console.log('Mine transaction sent with the nonce', _nonce)
         tx.wait().then(result => {
             console.log('Mine transaction confirmed with the nonce', _nonce)
