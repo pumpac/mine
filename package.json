@@ -1,8 +1,7 @@
 {
-  "name": "Hypersound-miner",
+  "name": "PumPac-miner",
   "version": "1.0.0",
   "main": "mine.js",
-  "author": "blastoshi",
   "license": "MIT",
   "dependencies": {
     "ethers": "^6.13.2"
